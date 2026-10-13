@@ -4,6 +4,11 @@
   const REVIEW_ENDPOINT="https://vikzpaetwkkztehumuqe.supabase.co/functions/v1/review-redirect";
   const parts=window.location.pathname.split("/").filter(Boolean);
 
+  if ((parts[0]||"").toLowerCase()==="time-admin") {
+    window.location.replace("/time-admin.html");
+    return;
+  }
+
   if ((parts[0]||"").toLowerCase()==="time") {
     const vehicle=(parts[1]||"").toUpperCase().trim();
     const target=vehicle ? "/time.html?vehicle="+encodeURIComponent(vehicle) : "/time.html";
