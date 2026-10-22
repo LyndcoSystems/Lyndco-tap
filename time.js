@@ -57,7 +57,7 @@ function eventScreen(data){
   app.innerHTML='<section class="card hero"><div class="pill">GREEN</div><div class="status ok">START ALREADY RECORDED</div><div class="bigtime">'+esc(localClock(s.start_at))+'</div><p class="muted">Duplicate tap ignored.</p></section>';return;
  }
  if(data.event==="end"){
-  app.innerHTML='<section class="card hero"><div class="pill">GREEN</div><div class="status ok">FINISH RECORDED</div><div class="bigtime">'+esc(localClock(s.end_at))+'</div><div class="vehicle">'+esc(s.end_vehicle||vehicle)+'</div><p class="muted">'+esc(s.actual_hours??"")+" hours recorded.</p></section>';
+  app.innerHTML='<section class="card hero"><div class="pill">GREEN</div><div class="status ok">FINISH RECORDED</div><div class="bigtime">'+esc(localClock(s.end_at))+'</div><div class="vehicle">'+esc(s.end_vehicle||vehicle)+'</div><p class="muted">'+esc(s.actual_hours??"")+' hours recorded.</p></section>';
   overnightPrompt(s); return;
  }
  if(data.event==="already_complete"){
